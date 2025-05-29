@@ -1,16 +1,37 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { useLocalSearchParams } from 'expo-router';
 
 const Category = () => {
+  const { slug } = useLocalSearchParams();
+
   return (
-    <View>
-      <Text>
-        Category
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Category: {slug}</Text>
+      <Text style={styles.subtitle}>Products will be displayed here</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F2F2F7',
+    padding: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#1C1C1E',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#8E8E93',
+    textAlign: 'center',
+  },
+});

@@ -1,12 +1,17 @@
-import { Stack, useRouter } from "expo-router";
+import { Stack } from "expo-router";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function ProductLayout() {
-  const router = useRouter();
-
   return (
     <Stack>
+      <Stack.Screen
+        name="index"
+        options={{
+          title: "Products",
+          headerShown: true,
+        }}
+      />
       <Stack.Screen
         name="[slug]"
         options={({ navigation }) => ({
